@@ -7,11 +7,11 @@
             "request": "launch",
             "program": "${workspaceFolder}\\manage.py",
             "args": [
-                "runserver",
-                "--noreload"
+                "runserver"
             ],
             "django": true,
             "env": {
+                "DJANGO_ENV": "production",
                 "DBHOST": "{DBHOST}",
                 "DBUSER": "{DBUSER}",
                 "DBNAME": "{DBNAME}",
