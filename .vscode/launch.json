@@ -15,7 +15,7 @@
                 "DBHOST": "{DBHOST}",
                 "DBUSER": "{DBUSER}",
                 "DBNAME": "{DBNAME}",
-                "DBPASS": "{DBPASS",
+                "DBPASS": "{DBPASS}",
             }
         }
     ],
