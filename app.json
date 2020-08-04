@@ -8,10 +8,10 @@
 	         "type": "webapp",
              "source": "*.git",
              "configs": [],
-             "database": "sample-django-db"	 
+             //"database": "sample-django-db"	 
 	    }
 	],
-	"database": 
+	"databases": 
 	[
 		{
 			"name": "sample-django-db",
