@@ -1,32 +1,33 @@
 {
-	"name": "azure-sample-djangoapp",
-	"version": "v1",
-	"services":
-	[
-	    {
-	         "name": "sample-django-web",
-	         "type": "webapp",
-             "source": "*.git",
-             "configs": [],
-             //"database": "sample-django-db"	 
-	    }
-	],
-	"databases": 
-	[
-		{
-			"name": "sample-django-db",
-			"type": "postgresql",
-			"password": "@sample-django-db.password"
-		}
-	],
-	"addons": ["log"],
-	"network": null,
-	"environments":
-	{
-	    "dev":
-	    {
-	        "resourceGroup": "azure-sample-djangoapp-dev",
-			"location":"eastus",
-	    }
-	}
+      "name": "azure-sample-djangoapp",
+      "version": "v1",
+      "services":
+          [
+              {
+                  "name": "sample-django-web",
+                  "type": "webapp",
+                  "properties": {
+                    "runtime": "python|3.7"
+                  },
+                  "env": "DJANGO_ENV=production",
+                  "source": "azure-sample-master"
+              }
+          ],
+      "addons":
+          [
+              {
+                  "serverName": "sample-django-server",
+                  "databaseName": "sample-django-db",
+                  "type": "postgresql",
+                  "migrate": "python manage.py migrate"
+              }
+          ],
+      "environments":
+          {
+              "dev":
+              {
+                   "resourceGroup": "azure-sample-djangoapp-dev",
+                   "location": "eastus"
+              }
+          }
 }
